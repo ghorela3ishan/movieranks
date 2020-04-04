@@ -1,12 +1,13 @@
 import App from "../../App";
-import About from "../../components/About";
-import UnknownPath from "../../components/UnknownPath";
+import About from "../../components/about";
+import UnknownPath from "../../components/unknownPath";
+import Feed from "../../components/Feed";
 
 const routes = [
     {
         exact: true,
         path: "/",
-        component: App
+        component: Feed
     },
     {
         exact: true,
