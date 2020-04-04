@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { Provider } from "react-redux"; 
+import './App.scss';
+import { Provider } from "react-redux";
 import store from "./core/Store";
 import rootReducer from "./services/rootReducer";
 import saga from "./services/saga";
@@ -17,10 +18,10 @@ ReactDOM.render(
     <Provider store={storeMain}>
         <Router>
             <Switch>
-                { isAuth ? 
-                    routes.map( route => <Route  {...route}/>)
+                {isAuth ?
+                    routes.map(route => <Route  {...route} />)
                     :
-                    <Route path="/" component={Login}/>
+                    <Route path="/" component={Login} />
                 }
             </Switch>
         </Router>
