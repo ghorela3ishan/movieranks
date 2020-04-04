@@ -9,10 +9,11 @@ import saga from "./services/saga";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import routes from "./core/Routing/router";
 import Login from "./components/Login";
+import { isAuthenticated } from "./core/config/utils";
 
 const storeMain = store.provideStore(rootReducer, saga);
 
-let isAuth = true;
+let isAuth = isAuthenticated();
 
 ReactDOM.render(
     <Provider store={storeMain}>
