@@ -6,7 +6,7 @@ import Feed from "../../components/Feed";
 const routes = [
     {
         exact: true,
-        path: "/feed",
+        path: "/",
         component: Feed
     },
     {
