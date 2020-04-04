@@ -15,6 +15,13 @@ import { GOOGLE_CLIENT_ID, createCookieInHour, AUTH_TOKEN_NAME } from "../../cor
 import { saveUserDetail } from "../../services/Login/actions";
 class Login extends React.Component {
 
+    componentDidMount() {
+        // console.log("Props<<", this.props);
+        // const { match, location, history } = this.props
+        // history.push('/feed');
+    }
+
+
     responseGoogle = (googleUser) => {
         var profile = googleUser.getBasicProfile(), id_token = googleUser.getAuthResponse().id_token, data = {};
         createCookieInHour(AUTH_TOKEN_NAME, id_token, 5);
@@ -25,6 +32,7 @@ class Login extends React.Component {
 
         }
         this.props.saveUserDetail(data);
+        this.props.history.push('/feed');
     }
 
     signOut = () => {
@@ -71,8 +79,7 @@ const mapDispatchToProps = (dispatch) => {
 }
 const mapStateToProps = (state) => {
     return {
-        list: state.feed.list,
-        isListLoading: state.feed.isListLoading
+        userData: state.login.userData
     };
 }
 

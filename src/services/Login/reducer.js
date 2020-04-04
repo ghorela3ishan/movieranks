@@ -7,7 +7,7 @@ const initialState = {
 export default function loginReducer(state = initialState, action) {
     switch (action.type) {
         case actions.USER_DETAIL:
-            return { ...state, userData: actions.data }
+            return { ...state, userData: action.data }
         default:
             return state
     }
