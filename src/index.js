@@ -11,7 +11,7 @@ import Login from "./components/Login";
 
 const storeMain = store.provideStore(rootReducer, saga);
 
-let isAuth = false;
+let isAuth = true;
 
 ReactDOM.render(
     <Provider store={storeMain}>
