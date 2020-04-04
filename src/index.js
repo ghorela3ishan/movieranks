@@ -12,6 +12,7 @@ const storeMain = store.provideStore(rootReducer, saga);
 
 ReactDOM.render(
     <Provider store={storeMain}>
+        
         <Router>
             <Switch>
                 { routes.map( route => <Route  {...route}/>) }
