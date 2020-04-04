@@ -1,36 +1,40 @@
 import React from "react";
 import Form from 'react-bootstrap/Form';
-import { Redirect } from 'react-router'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import GoogleLogin from 'react-google-login';
-// import { GoogleLogout } from 'react-google-login';
 import './index.scss';
 import { GOOGLE_CLIENT_ID, createCookieInHour, AUTH_TOKEN_NAME } from "../../core/config/utils";
 import { saveUserDetail } from "../../services/Login/actions";
 class Login extends React.Component {
 
 
-    responseGoogle = (googleUser) => {
-        var profile = googleUser.getBasicProfile(), id_token = googleUser.getAuthResponse().id_token, data = {};
-        createCookieInHour(AUTH_TOKEN_NAME, id_token, 5);
-        data = {
-            userName: profile.getName(),
-            userId: profile.getId(),
-            emailId: profile.getEmail()
-
-        }
-        this.props.saveUserDetail(data);
-        this.setState({
-            isRedirect: true
-        })
+    changeRoute = () => {
+        this.props.history.push('/about');
 
     }
+
+    responseGoogle = (googleUser) => {
+        if (googleUser && !googleUser.error) {
+            var profile = googleUser.getBasicProfile(), id_token = googleUser.getAuthResponse().id_token, data = {};
+            createCookieInHour(AUTH_TOKEN_NAME, id_token, 5);
+            data = {
+                userName: profile.getName(),
+                userId: profile.getId(),
+                emailId: profile.getEmail()
+
+            }
+            this.props.saveUserDetail(data);
+            setTimeout(() => {
+                this.changeRoute();
+            }, 100);
+        }
+    }
+
+
 
     signOut = () => {
         var auth2 = gapi.auth2.getAuthInstance();
