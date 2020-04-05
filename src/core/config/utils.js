@@ -1,5 +1,6 @@
 export const GOOGLE_CLIENT_ID = '568666328888-pk235nbose5v9bts2nbv71k2obsn4t6s.apps.googleusercontent.com';
 export const AUTH_TOKEN_NAME = 'U_AUTH_TOKEN';
+export const AUTH_INFO = 'AUTH_INFO' 
 export const createCookieInHour = (cookieName, cookieValue, hourToExpire) => {
     try {
         let date = new Date();
@@ -15,7 +16,7 @@ export const getCookieValue = (name) => {
     if (parts.length == 2) return parts.pop().split(";").shift();
 }
 
-export const isAuthenticated = () => {
+export const isAuthTokenPresent = () => {
     if (getCookieValue(AUTH_TOKEN_NAME) && getCookieValue(AUTH_TOKEN_NAME).length > 0) {
         return true
     } else {

@@ -4,14 +4,25 @@ import { connect } from "react-redux";
 import { fetchList } from "./../../services/Feed/actions";
 import List from "./List/List";
 import "./index.scss";
+import isAuthenticated from "../../services/authService";
 
 class Feed extends React.Component {
     
     componentDidMount() {
+        if(!isAuthenticated()) {
+            this.props.history.push('/');
+        }
         let userInfo = this.props.userInfo;
         this.props.fetchList({ userInfo });
     }
 
+    componentDidUpdate() {
+        if(!this.props.list.length) {
+            let userInfo = this.props.userInfo;
+            this.props.fetchList({ userInfo });
+        }
+    }
+    
     render() {
         let {list, isListLoading } = this.props; 
         return (

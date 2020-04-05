@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import GoogleLogin from 'react-google-login';
 import './index.scss';
-import { GOOGLE_CLIENT_ID, createCookieInHour, AUTH_TOKEN_NAME } from "../../core/config/utils";
+import { GOOGLE_CLIENT_ID, createCookieInHour, AUTH_TOKEN_NAME, AUTH_INFO } from "../../core/config/utils";
 import { saveUserDetail } from "../../services/Login/actions";
 class Login extends React.Component {
 
@@ -20,7 +20,6 @@ class Login extends React.Component {
     responseGoogle = (googleUser) => {
         if (googleUser && !googleUser.error) {
             var profile = googleUser.getBasicProfile(), id_token = googleUser.getAuthResponse().id_token, data = {};
-            createCookieInHour(AUTH_TOKEN_NAME, id_token, 5);
             data = {
                 userName: profile.getName(),
                 userId: profile.getId(),
@@ -28,10 +27,10 @@ class Login extends React.Component {
                 givenName: profile.getGivenName(),
                 familyName: profile.getFamilyName()
             }
+            createCookieInHour(AUTH_TOKEN_NAME, id_token, 5);
+            createCookieInHour(AUTH_INFO, JSON.stringify(data), 5)
             this.props.saveUserDetail(data);
-            // setTimeout(() => {
-                this.changeRoute();
-            // }, 100);
+            this.changeRoute();
         }
     }
 
