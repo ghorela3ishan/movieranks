@@ -13,10 +13,10 @@ function listReqComp(isSuccess, data) {
     return { type: actions.LIST_REQUEST_FAIL }
 }
 
-export function fetchList() {
+export function fetchList(data) {
     return (dispatch) => {
         dispatch(listReqStart());
-        gatewayInstace.get("/list").then((res) => {
+        gatewayInstace.post("/list", { userInfo: data.userInfo }).then((res) => {
             dispatch(listReqComp(true, res.data))
         }).catch((err) => {
             // dispatch(listReqComp(true, listData))

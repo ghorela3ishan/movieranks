@@ -13,16 +13,13 @@ import { isAuthenticated } from "./core/config/utils";
 
 const storeMain = store.provideStore(rootReducer, saga);
 
-let isAuth = isAuthenticated();
 
 ReactDOM.render(
     <Provider store={storeMain}>
         <Router>
             <Switch>
-                {isAuth ?
+                {
                     routes.map(route => <Route  {...route} />)
-                    :
-                    <Route path="/" component={Login} />
                 }
             </Switch>
         </Router>

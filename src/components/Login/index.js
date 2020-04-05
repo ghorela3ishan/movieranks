@@ -13,7 +13,7 @@ class Login extends React.Component {
 
 
     changeRoute = () => {
-        this.props.history.push('/about');
+        this.props.history.push('/feed');
 
     }
 
@@ -24,13 +24,14 @@ class Login extends React.Component {
             data = {
                 userName: profile.getName(),
                 userId: profile.getId(),
-                emailId: profile.getEmail()
-
+                email: profile.getEmail(),
+                givenName: profile.getGivenName(),
+                familyName: profile.getFamilyName()
             }
             this.props.saveUserDetail(data);
-            setTimeout(() => {
+            // setTimeout(() => {
                 this.changeRoute();
-            }, 100);
+            // }, 100);
         }
     }
 

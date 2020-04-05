@@ -8,8 +8,8 @@ import "./index.scss";
 class Feed extends React.Component {
     
     componentDidMount() {
-        // fetch data
-        this.props.fetchList();
+        let userInfo = this.props.userInfo;
+        this.props.fetchList({ userInfo });
     }
 
     render() {
@@ -28,7 +28,8 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
     return {
         list: state.feed.list,
-        isListLoading: state.feed.isListLoading
+        isListLoading: state.feed.isListLoading,
+        userInfo: state.login.userData
     };
 }
 
