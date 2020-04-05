@@ -47,25 +47,28 @@ class Login extends React.Component {
     render() {
         return <div className="Login-container">
 
-            <h1 className="text-align-center">Welcome Back</h1>
+            {/* <h1 className="text-align-center">Welcome Back</h1> */}
             <Container>
                 <Row>
                     <Col sm={3}>
                     </Col>
                     <Col sm={6}>
-                        <Form className="text-align-center">
-                            <GoogleLogin
-                                clientId={GOOGLE_CLIENT_ID}
-                                buttonText="Sign in with Google"
-                                theme="dark"
-                                width={380}
-                                height={50}
-                                longtitle={true}
-                                onSuccess={this.responseGoogle}
-                                onFailure={this.responseGoogle}
-                                isSignedIn={true}
-                            />
-                        </Form>
+                        <div className="auto-form-wrapper">
+                            <Form className="text-align-center">
+                                <GoogleLogin
+                                    clientId={GOOGLE_CLIENT_ID}
+                                    buttonText="Log in with Google"
+                                    theme="dark"
+                                    width={380}
+                                    height={50}
+                                    longtitle={true}
+                                    onSuccess={this.responseGoogle}
+                                    onFailure={this.responseGoogle}
+                                    isSignedIn={true}
+                                    className="google-login-btn"
+                                />
+                            </Form>
+                        </div>
                     </Col>
                     <Col sm={3}></Col>
                 </Row>
