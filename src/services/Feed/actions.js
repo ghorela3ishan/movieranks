@@ -17,9 +17,9 @@ export function fetchList() {
     return (dispatch) => {
         dispatch(listReqStart());
         gatewayInstace.get("/list").then((res) => {
-            dispatch(listReqComp(true, resp.data))
+            dispatch(listReqComp(true, res.data))
         }).catch((err) => {
-            dispatch(listReqComp(true, listData))
+            // dispatch(listReqComp(true, listData))
             dispatch(listReqComp(false, err))
         })
     }
