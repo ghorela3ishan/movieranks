@@ -24,3 +24,14 @@ export function fetchList(data) {
         })
     }
 }
+
+export function voteMovie(movieId, userId) {
+    return (dispatch) => {
+        gatewayInstace.put("/list", { userId, movieId }).then((res) => {
+            dispatch(listReqComp(true, res.data))
+        }).catch((err) => {
+            // dispatch(listReqComp(true, listData))
+            dispatch(listReqComp(false, err))
+        })
+    }
+}

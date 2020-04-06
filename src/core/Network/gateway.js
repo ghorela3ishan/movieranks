@@ -14,6 +14,10 @@ class Gateway {
     post(path, data) {
         return this.http.post(path, data);
     }
+
+    put(path, data) {
+        return this.http.put(path, data);
+    }
 }
 
 const gatewayInstance = new Gateway(); 
