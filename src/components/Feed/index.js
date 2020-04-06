@@ -20,6 +20,9 @@ class Feed extends React.Component {
     }
 
     componentDidUpdate() {
+        if(!this.props.isAuthenticated) {
+            this.props.history.push('/');
+        }
         if(!this.props.list.length && !this.props.isListLoading) {
             let userInfo = this.props.userInfo;
             this.props.fetchList({ userInfo });
@@ -47,7 +50,8 @@ const mapStateToProps = (state) => {
     return {
         list: state.feed.list,
         isListLoading: state.feed.isListLoading,
-        userInfo: state.login.userData
+        userInfo: state.login.userData,
+        isAuthenticated: state.login.isAuthenticated
     };
 }
 
