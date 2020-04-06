@@ -4,20 +4,23 @@ import { connect } from "react-redux";
 import { fetchList, voteMovie } from "./../../services/Feed/actions";
 import List from "./List/List";
 import "./index.scss";
-import isAuthenticated from "../../services/authService";
+import { isAuthenticated } from "../../services/authService";
 
 class Feed extends React.Component {
     
     componentDidMount() {
+        // check for direct link access
         if(!isAuthenticated()) {
             this.props.history.push('/');
         }
         let userInfo = this.props.userInfo;
-        this.props.fetchList({ userInfo });
+        if(userInfo) {
+            this.props.fetchList({ userInfo });
+        }
     }
 
     componentDidUpdate() {
-        if(!this.props.list.length) {
+        if(!this.props.list.length && !this.props.isListLoading) {
             let userInfo = this.props.userInfo;
             this.props.fetchList({ userInfo });
         }

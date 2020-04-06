@@ -9,6 +9,8 @@ import GoogleLogin from 'react-google-login';
 import './index.scss';
 import { GOOGLE_CLIENT_ID, createCookieInHour, AUTH_TOKEN_NAME, AUTH_INFO } from "../../core/config/utils";
 import { saveUserDetail } from "../../services/Login/actions";
+import { addAuthToken } from "../../services/authService";
+
 class Login extends React.Component {
 
 
@@ -27,6 +29,7 @@ class Login extends React.Component {
                 givenName: profile.getGivenName(),
                 familyName: profile.getFamilyName()
             }
+            addAuthToken(id_token);
             createCookieInHour(AUTH_TOKEN_NAME, id_token, 5);
             createCookieInHour(AUTH_INFO, JSON.stringify(data), 5)
             this.props.saveUserDetail(data);

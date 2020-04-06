@@ -2,7 +2,7 @@ import { actions} from "./constants";
 
 const initialState = {
     list: [],
-    isListLoading: true 
+    isListLoading: false 
 }
 
 export default function feedReducer(state = initialState, action) {
