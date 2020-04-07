@@ -35,16 +35,16 @@
     "style-loader": "^0.23.0",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.1",
-    "webpack-merge": "^4.2.1"
-  },
-  "devDependencies": {
+    "webpack-merge": "^4.2.1",
     "@babel/cli": "^7.1.0",
     "@babel/core": "^7.1.0",
     "@babel/plugin-transform-runtime": "^7.4.3",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
-    "@babel/runtime": "^7.4.3",
+    "@babel/runtime": "^7.4.3"
+  },
+  "devDependencies": {
     "webpack-dev-server": "^3.1.8"
   }
 }
