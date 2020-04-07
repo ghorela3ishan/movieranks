@@ -5,6 +5,7 @@ import { fetchList, voteMovie } from "./../../services/Feed/actions";
 import List from "./List/List";
 import "./index.scss";
 import { isAuthenticated } from "../../services/authService";
+import Topbar from "./Topbar/Topbar";
 
 class Feed extends React.Component {
     
@@ -37,6 +38,7 @@ class Feed extends React.Component {
         let {list, isListLoading } = this.props; 
         return (
             <div>
+                <Topbar/>
                 <List list={list} isListLoading={isListLoading} handleUpvoteClick={this.handleUpvoteClick}/>
             </div>
         )

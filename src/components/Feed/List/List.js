@@ -11,7 +11,7 @@ export default class List extends React.Component {
                     isListLoading ? "loading list" : 
                     (
                            list.length ? 
-                            list.map((item, index) => <ListTuple item={item} handleUpvoteClick={handleUpvoteClick}/>) 
+                            list.map((item, index) => <ListTuple rank={index+1} item={item} handleUpvoteClick={handleUpvoteClick}/>) 
                                 : 
                             "some error occurred"
                     )

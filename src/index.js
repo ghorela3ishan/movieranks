@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import routes from "./core/Routing/router";
 import storeMain from "./core/Store/store";
+import "./App.scss"
 
 ReactDOM.render(
     <Provider store={storeMain}>

@@ -1,4 +1,5 @@
 import React from "react";
+import "./ListTuple.scss";
 
 export default class ListTuple extends React.Component {
     state = {
@@ -7,15 +8,21 @@ export default class ListTuple extends React.Component {
 
     render() {
         let { _id, name, votes, isUpVoted } = this.props.item;
-        let { handleUpvoteClick } = this.props;
+        let { handleUpvoteClick, rank } = this.props;
         return (
-            <div style={{border: '1px solid red', margin: '10px'}}>
-                Film name: {name} <br/>
-                Total votes: {votes} <br/>
-                {
-                    !isUpVoted && 
-                    <input type="button" value="Upvote" onClick={() => handleUpvoteClick(_id)} />
-                }
+            <div className='tupleCont'>
+                <div className='nameSec'>
+                    <div className='nameCont'>{name}</div>
+                    {
+                        isUpVoted ? <i className='upVotedIcon'>&#9829;</i> :  
+                        <input type="button" value="Upvote" className='upVoteBtn' onClick={() => handleUpvoteClick(_id)} />
+                        
+                    }
+                </div>
+                <div className='voteSec'>
+                    <div className='rankCont'>rank#{rank}</div>    
+                    <div className='totalVotesCont'>total votes#{votes}</div> 
+                </div>
             </div>
         )
     }
