@@ -14,14 +14,14 @@ const routes = [
         path: "/feed",
         component: Feed
     },
-    {
-        exact: true,
-        path: "/about",
-        component: About
-    },
-    {
-        component: UnknownPath
-    }
+    // {
+    //     exact: true,
+    //     path: "/about",
+    //     component: About
+    // },
+    // {
+    //     component: UnknownPath
+    // }
 ]
 
 export default routes;
