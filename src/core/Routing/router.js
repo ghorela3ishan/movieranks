@@ -1,4 +1,4 @@
-import About from "../../components/about";
+import About from "../../components/about.js";
 import UnknownPath from "../../components/unknownPath";
 import Feed from "../../components/Feed";
 import Login from "../../components/Login";
