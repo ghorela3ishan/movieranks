@@ -2,12 +2,11 @@ import axios from "axios";
 import { createCookieInHour, AUTH_TOKEN_NAME, AUTH_INFO } from "../config/utils";
 import storeMain from "../Store/store";
 import { actions } from "../../services/Login/constants"
+import { API_ENDPOINT } from "../config/utils";
 
 const networkInstance = axios.create({
-    baseURL: "http://localhost:8000",
-    // baseURL: 'https://api-movieranks.herokuapp.com/',
+    baseURL: API_ENDPOINT,
     timeout: 10000
-    // headers: {"X-Custom-Header": "foobar"}
 });
 
 networkInstance.interceptors.response.use(undefined,(error) => {
