@@ -23,7 +23,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-    title: "HimSafar",
+    title: "Movie Ranks",
     template: "index.html"
   })]
 

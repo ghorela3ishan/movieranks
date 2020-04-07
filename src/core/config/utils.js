@@ -1,4 +1,7 @@
-export const GOOGLE_CLIENT_ID = '568666328888-pk235nbose5v9bts2nbv71k2obsn4t6s.apps.googleusercontent.com';
+const LOCAL_GOOGLE_CLIENT_ID = '78068735533-t03tid93no80mmvfptl728vivho2qqm6.apps.googleusercontent.com'
+const LIVE_GOOGLE_CLIENT_ID = '78068735533-d0ua156tg5hcjpr5v7mksh6ghvj7f8bo.apps.googleusercontent.com';
+export let GOOGLE_CLIENT_ID = LIVE_GOOGLE_CLIENT_ID;
+// export let GOOGLE_CLIENT_ID = LOCAL_GOOGLE_CLIENT_ID;
 export const AUTH_TOKEN_NAME = 'U_AUTH_TOKEN';
 export const AUTH_INFO = 'AUTH_INFO' 
 export const createCookieInHour = (cookieName, cookieValue, hourToExpire) => {
