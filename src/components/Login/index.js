@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import GoogleLogin from 'react-google-login';
 import './index.scss';
-import { GOOGLE_CLIENT_ID, createCookieInHour, AUTH_TOKEN_NAME, AUTH_INFO } from "../../core/config/utils";
+import { GOOGLE_CLIENT_ID, createCookieInHour, AUTH_TOKEN_NAME, AUTH_INFO, REDIRECT_URI } from "../../core/config/utils";
 import { saveUserDetail } from "../../services/Login/actions";
 import { addAuthToken } from "../../services/authService";
 
@@ -69,6 +69,8 @@ class Login extends React.Component {
                                     onFailure={this.responseGoogle}
                                     isSignedIn={true}
                                     className="google-login-btn"
+                                    uxMode='redirect'
+                                    redirectUri={REDIRECT_URI}
                                 />
                             </Form>
                         </div>

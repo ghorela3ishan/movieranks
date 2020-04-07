@@ -19,9 +19,9 @@ const routes = [
     //     path: "/about",
     //     component: About
     // },
-    // {
-    //     component: UnknownPath
-    // }
+    {
+        component: Feed
+    }
 ]
 
 export default routes;
