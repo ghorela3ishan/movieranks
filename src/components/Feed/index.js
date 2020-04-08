@@ -8,6 +8,10 @@ import { isAuthenticated } from "../../services/authService";
 import Topbar from "./Topbar/Topbar";
 
 class Feed extends React.Component {
+    state = {
+        list: [],
+        searchStr: false
+    }
     
     componentDidMount() {
         // check for direct link access
@@ -34,12 +38,33 @@ class Feed extends React.Component {
         this.props.voteMovie(movieId, this.props.userInfo.userId);
     }
     
+    handleSearch = (searchStr) => {
+        if(searchStr){
+            let matchList = this.props.list.filter(function(item){
+                console.log(item.name.toLowerCase().indexOf(searchStr.toLowerCase()) != -1)
+                return item.name.toLowerCase().indexOf(searchStr.toLowerCase()) != -1;
+            })
+            this.setState({
+                list: matchList,
+                searchStr: true
+            })
+            return;
+        } 
+        this.setState({
+            list: [],
+            searchStr: false
+        })
+    }
+
     render() {
         let {list, isListLoading } = this.props; 
+        let stateList  = this.state.list;
+        let { searchStr } = this.state
+
         return (
             <div>
-                <Topbar/>
-                <List list={list} isListLoading={isListLoading} handleUpvoteClick={this.handleUpvoteClick}/>
+                <Topbar onSearchInput={this.handleSearch}/>
+                <List list={searchStr ? stateList : list} isListLoading={isListLoading} handleUpvoteClick={this.handleUpvoteClick}/>
             </div>
         )
     }
