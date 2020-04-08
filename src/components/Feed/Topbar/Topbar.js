@@ -24,7 +24,7 @@ export default class Topbar extends React.Component {
                 <span className='feedLogoCont'><Logo/></span>
                 <input name='searchInput' className='searchBar'
                     value={this.state.searchValue} onChange={this.handleChange}
-                    placeholder='Search films'    
+                    placeholder='Search movies'    
                 />
                 <InfoModal></InfoModal>
             </div>

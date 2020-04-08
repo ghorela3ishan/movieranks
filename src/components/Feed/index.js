@@ -6,6 +6,7 @@ import List from "./List/List";
 import "./index.scss";
 import { isAuthenticated } from "../../services/authService";
 import Topbar from "./Topbar/Topbar";
+import Footer from "./Footer/Footer";
 
 class Feed extends React.Component {
     state = {
@@ -65,6 +66,7 @@ class Feed extends React.Component {
             <div>
                 <Topbar onSearchInput={this.handleSearch}/>
                 <List list={searchStr ? stateList : list} isListLoading={isListLoading} handleUpvoteClick={this.handleUpvoteClick}/>
+                <Footer/>
             </div>
         )
     }

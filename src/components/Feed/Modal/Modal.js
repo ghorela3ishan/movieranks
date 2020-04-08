@@ -38,9 +38,10 @@ export default class InfoModal extends React.Component {
                         <b>1.</b> Browse through a list of curated movies and discover some amazing content to watch. <br/>
                         <b>2.</b> Regarding the 'UpVote' button, once you have upvoted a movie, you have made the commitment. Gotta live with
                         that forever like with your partner ( so make a wise decision :p ). <br/>
-                        <b>3.</b> Every 'UpVote' take the movie one step closed to rank#1.<br/>
+                        <b>3.</b> Every 'UpVote' takes the movie one step closer to the rank#1.<br/>
                         <b>4.</b> Ask your peers to vote for their favorite movies here and this will generate a crowdsourced top movies list for
                         the entire cinemaholic community.<br/>
+                        <b>5.</b> Based on your recommendations we will strive to add more movies to the list. <br/>
                     </Modal.Body>
                 </Modal>
         )
