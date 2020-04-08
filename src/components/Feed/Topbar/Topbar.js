@@ -1,5 +1,6 @@
 import React from "react";
 import './Topbar.scss';
+import InfoModal from '../Modal/Modal';
 
 export default class Topbar extends React.Component {
     state = {
@@ -23,6 +24,7 @@ export default class Topbar extends React.Component {
                     value={this.state.searchValue} onChange={this.handleChange}
                     placeholder='Search films'    
                 />
+                <InfoModal></InfoModal>
             </div>
         )
     }
