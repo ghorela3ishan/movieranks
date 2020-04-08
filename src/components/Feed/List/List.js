@@ -1,5 +1,7 @@
 import React from "react";
 import ListTuple from "../ListTuple/ListTuple"
+import Spinner from 'react-bootstrap/Spinner';
+import './List.scss'
 
 export default class List extends React.Component {
 
@@ -8,12 +10,16 @@ export default class List extends React.Component {
         return (
             <div>
                 {
-                    isListLoading ? "loading list" : 
+                    isListLoading ? 
+                    <div className='spinnerCont'>
+                        <Spinner animation="border" variant="light" />  
+                    </div>
+                    :
                     (
                            list.length ? 
                             list.map((item, index) => <ListTuple rank={index+1} item={item} handleUpvoteClick={handleUpvoteClick}/>) 
                                 : 
-                            "some error occurred"
+                            <div className='noResultsCont'>Oops! No results found</div>
                     )
                 }
             </div>
