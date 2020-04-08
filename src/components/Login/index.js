@@ -10,6 +10,7 @@ import './index.scss';
 import { GOOGLE_CLIENT_ID, createCookieInHour, AUTH_TOKEN_NAME, AUTH_INFO, REDIRECT_URI } from "../../core/config/utils";
 import { saveUserDetail } from "../../services/Login/actions";
 import { addAuthToken } from "../../services/authService";
+import Logo from "../Logo/Logo";
 
 class Login extends React.Component {
 
@@ -49,37 +50,29 @@ class Login extends React.Component {
 
     render() {
         return <div className="Login-container">
-
-            {/* <h1 className="text-align-center">Welcome Back</h1> */}
-            <Container>
-                <Row>
-                    <Col sm={3}>
-                    </Col>
-                    <Col sm={6}>
-                        <div className="auto-form-wrapper">
-                            <Form className="text-align-center">
-                                <GoogleLogin
-                                    clientId={GOOGLE_CLIENT_ID}
-                                    buttonText="Log in with Google"
-                                    theme="dark"
-                                    width={380}
-                                    height={50}
-                                    longtitle={true}
-                                    onSuccess={this.responseGoogle}
-                                    onFailure={this.responseGoogle}
-                                    isSignedIn={true}
-                                    className="google-login-btn"
-                                    uxMode='redirect'
-                                    redirectUri={REDIRECT_URI}
-                                />
-                            </Form>
-                        </div>
-                    </Col>
-                    <Col sm={3}></Col>
-                </Row>
-            </Container>
-
-        </div>
+                <div className='welcomeText'>
+                    Welcome to <br/> 
+                    <Logo/>
+                    <br/>
+                    <br/>
+                </div>
+                <Form className="text-align-center">
+                    <GoogleLogin
+                        clientId={GOOGLE_CLIENT_ID}
+                        buttonText="Log in with Google"
+                        theme="dark"
+                        width={380}
+                        height={50}
+                        longtitle={true}
+                        onSuccess={this.responseGoogle}
+                        onFailure={this.responseGoogle}
+                        isSignedIn={true}
+                        className="google-login-btn"
+                        uxMode='redirect'
+                        redirectUri={REDIRECT_URI}
+                    />
+                </Form>
+            </div>
     }
 }
 

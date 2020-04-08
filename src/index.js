@@ -8,6 +8,7 @@ import storeMain from "./core/Store/store";
 import "./App.scss"
 
 ReactDOM.render(
+    <div className='appCont'>
     <Provider store={storeMain}>
         <Router>
             <Switch>
@@ -17,4 +18,5 @@ ReactDOM.render(
             </Switch>
         </Router>
     </Provider>
+    </div>
     , document.getElementById("root"));

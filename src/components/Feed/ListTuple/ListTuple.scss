@@ -1,17 +1,24 @@
 .tupleCont{
-    border-left: 4px solid #22528e;
+    border-left: 4px solid #c5cdd6;
     margin: 10px;
-    background-color: #f7f8ff;
-    border-radius: 1px;
+    background-color: #ffffff;
+    border-radius: 1.5px;
     padding: 3px 0 10px 8px;
     .nameSec{
         display: flex;
+        margin: 5px 0 7px 0;
         .nameCont{
+            font-weight: 600;
             margin-right: 5px;
-            color: #5b5656
+            color: #5b5656;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+            white-space: nowrap;
         }
         .upVotedIcon{
             color: #a94376;
+            margin-right: 10px;
         }
         .upVoteBtn{
             border: 1px solid #a94376;
@@ -19,10 +26,12 @@
             background: none;
             border-radius: 4px;
             font-size: 11px;
+            margin-right: 10px;
         }
     }
     .voteSec{
         display: flex;
+        font-weight: 600;
         .rankCont{
             // border: 0.5px solid #EF959C;
             background-color: #55ad5e;
