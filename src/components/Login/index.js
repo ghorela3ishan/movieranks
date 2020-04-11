@@ -68,8 +68,8 @@ class Login extends React.Component {
                         onFailure={this.responseGoogle}
                         isSignedIn={true}
                         className="google-login-btn"
-                        uxMode='redirect'
-                        redirectUri={REDIRECT_URI}
+                        // uxMode='redirect'
+                        // redirectUri={REDIRECT_URI}
                     />
                 </Form>
             </div>
