@@ -16,8 +16,8 @@ export default class ListTuple extends React.Component {
     }
 
     render() {
-        let { _id, name, votes, isUpVoted } = this.props.item;
-        let { handleUpvoteClick, rank } = this.props;
+        let { _id, name, votes, isUpVoted, rank } = this.props.item;
+        let { handleUpvoteClick } = this.props;
         let { showLoader } = this.state;
 
         return (

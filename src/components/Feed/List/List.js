@@ -17,7 +17,7 @@ export default class List extends React.Component {
                     :
                     (
                            list.length ? 
-                            list.map((item, index) => <ListTuple rank={index+1} item={item} handleUpvoteClick={handleUpvoteClick}/>) 
+                            list.map((item, index) => <ListTuple key={item._id} rank={index+1} item={item} handleUpvoteClick={handleUpvoteClick}/>) 
                                 : 
                             <div className='noResultsCont'>Oops! No results found</div>
                     )

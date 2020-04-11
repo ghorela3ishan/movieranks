@@ -1,5 +1,5 @@
 .tupleCont{
-    border-left: 4px solid #c5cdd6;
+    border-left: 4px solid #436184;
     margin: 10px;
     background-color: #ffffff;
     border-radius: 1.5px;
@@ -38,7 +38,7 @@
         display: flex;
         font-weight: 600;
         .rankCont{
-            // border: 0.5px solid #EF959C;
+            background-image: linear-gradient(to bottom right, #518ed4, #92f19c);
             background-color: #55ad5e;
             border-radius: 8px;
             padding: 3px;
@@ -47,7 +47,7 @@
             padding: 3px 5px;
         }
         .totalVotesCont{
-            // border: 0.5px solid #EF959C;
+            background-image: linear-gradient(to bottom right, #518ed4, #92f19c);
             background-color: #518ed4;
             border-radius: 8px;
             padding: 3px;
